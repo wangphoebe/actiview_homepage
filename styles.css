@@ -33,7 +33,7 @@ nav ul li a {
 }
 
 header {
-    background: url('header-background.jpg') no-repeat center center/cover;
+    background: url('figures/title_figure.jpg') no-repeat center center/cover;
     color: white;
     height: 100vh;
     display: flex;
