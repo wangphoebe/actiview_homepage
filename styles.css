@@ -34,7 +34,7 @@ nav ul li a {
 
 header {
     background: url('figures/title_figure.jpg') no-repeat center center;
-	background-size: auto;
+	background-size: contain;
     color: white;
     height: 100vh;
     display: flex;
@@ -67,6 +67,23 @@ header p {
 
 .cta-button:hover {
     background-color: #0056b3;
+}
+
+/* Social link section */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    margin: 0 15px;
+}
+
+.social-links .icon {
+    width: 30px;  /* Adjust the size of icons */
+    height: 30px;
+    object-fit: contain;
 }
 
 section {
