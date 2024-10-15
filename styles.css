@@ -81,10 +81,23 @@ header p {
     margin: 0 15px;
 }
 
+.link-item {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px; /* Adjust text size */
+}
+
 .social-links .icon {
     width: 30px;  /* Adjust the size of icons */
     height: 30px;
     object-fit: contain;
+}
+
+.link-item:hover span {
+    text-decoration: underline;  /* Adds underline on hover */
 }
 
 section {
