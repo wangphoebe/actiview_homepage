@@ -121,6 +121,12 @@ section p, ul {
     margin: 10px 0;
 }
 
+section p2 {
+    font-size: 1.2rem;
+    text-align: left; /* Aligns text to the left */
+    margin: 10px 0;
+}
+
 .two-column-layout {
     display: flex; /* Enables Flexbox */
     justify-content: space-between; /* Space between columns */
@@ -128,11 +134,13 @@ section p, ul {
 
 .left-column {
     flex: 1; /* Takes 1 part of the available space */
+    text-align: left; /* Aligns text to the left */
     padding-right: 20px; /* Adds space to the right */
 }
 
 .right-column {
     flex: 1; /* Takes 1 part of the available space */
+    text-align: left; /* Aligns text to the left */
     padding-left: 20px; /* Adds space to the left */
 }
 
