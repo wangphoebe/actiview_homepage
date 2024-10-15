@@ -111,6 +111,13 @@ section p, ul {
     margin: 10px 0;
 }
 
+.figure {
+    max-width: 100%;  /* Ensure the image doesn't overflow the container */
+    height: auto;     /* Keep the aspect ratio intact */
+    display: block;
+    margin: 20px auto;  /* Center the image with some margin */
+}
+
 footer {
     background-color: #333;
     color: white;
