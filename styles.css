@@ -96,10 +96,6 @@ header p {
     object-fit: contain;
 }
 
-.link-item:hover span {
-    text-decoration: underline;  /* Adds underline on hover */
-}
-
 section {
     padding: 50px;
     text-align: center;
