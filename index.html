@@ -12,7 +12,7 @@
             <li><a href="#about">About ActiView</a></li>
             <li><a href="#data">Benchmark Introduction</a></li>
             <li><a href="#leaderboard">Leaderboard</a></li>
-            <li><a href="#bibtex">Citation</a></li>
+	<!-- <li><a href="#bibtex">Citation</a></li> -->
         </ul>
     </nav>
 
@@ -36,22 +36,27 @@
     <section id="about">
         <h2>About ActiView</h2>
         <p>
-            ActiView is a benchmark designed to evaluate the active perception abilities of Multimodal Large Language Models (MLLMs). In this task, models are challenged to navigate and adjust their viewpoint to answer Visual Question Answering (VQA) questions, simulating human-like active perception.
+            ActiView is a benchmark designed to evaluate the active perception abilities of Multimodal Large Language Models (MLLMs). In this task, models are challenged to navigate and adjust their filed of view to answer questions, simulating human-like active perception.
         </p>
         <h2>Authors</h2>
         <p>
-            Ziyue Wang, Chi Chen, Fuwen Luo, Yurui Dong, Yuanchi Zhang, Yuzhuang Xu, Xiaolong Wang, Peng Li, Yang Liu
+            Ziyue Wang<sup>1</sup>, Chi Chen<sup>1</sup>, Fuwen Luo<sup>1</sup>, Yurui Dong<sup>2</sup>, Yuanchi Zhang<sup>1</sup>, Yuzhuang Xu<sup>1</sup>, Xiaolong Wang<sup>1</sup>, Peng Li<sup>1</sup>, Yang Liu<sup>1</sup>
         </p>
         <p>
-            Dept. of Comp. Sci. & Tech., Institute for AI, Tsinghua University, Beijing, China
+            <sup>1</sup>Tsinghua University, Beijing, China; <sup>2</sup>Fudan University, Shanghai, China
         </p>
-<!--         <p>
-            The benchmark reveals significant gaps in current MLLM capabilities and encourages future research aimed at closing this gap.
-        </p> -->
+	<h2>Abstract</h2>  
+	<p>
+	    Active perception, a crucial human capability, involves setting a goal based on the current understanding of the environment and performing actions to achieve that goal. Despite significant efforts in evaluating Multimodal Large Language Models (MLLMs), active perception has been largely overlooked. To address this gap, we propose a novel benchmark named ActiView to evaluate active perception in MLLMs. Since comprehensively assessing active perception is challenging, we focus on a specialized form of Visual Question Answering (VQA) that eases the evaluation yet challenging for existing MLLMs. Given an image, we restrict the perceptual field of a model, requiring it to actively zoom or shift its perceptual field based on reasoning to answer the question successfully. We conduct extensive evaluation over 27 models, including proprietary and open-source models, and observe that the ability to read and comprehend multiple images simultaneously plays a significant role in enabling active perception. Results reveal a significant gap in the active perception capability of MLLMs, indicating that this area deserves more attention. We hope that our benchmark could help develop methods for MLLMs to understand multimodal inputs in more natural and holistic ways.
+	</p>
     </section>
 
     <section id="data">
         <h2>Project introduction</h2>
+	<p>
+	    Despite the extensive efforts devoted to MLLM evaluation, <i>active perception</i><sup>[1;2]</sup> remains underexplored. Active perception involves <b>understanding the reasons for sensing, choosing what to perceive, and determining the methods, timing, and locations for achieving that perception</b><sup>[2]</sup>. This is important because in the real world, the desired information often does not appear directly in the center of one’s field of vision. Instead, it requires individuals to move their field of view, locate details, and filter out distracting information. For example, in Figure 1, suppose we are looking for information in a giant painting. We need to first shift our view to locate the specific area and then possibly zoom in to gather detailed information. Intuitively, <b>active perception not only enables a person or model to accomplish more complex tasks, but it also has the potential to serve as a good indicator of the level of intelligence of a model</b>. This makes it a critical capability that warrants thorough evaluation.
+	</p>
+	<img src="figures/figure1.png" alt="Figure 1: Example of active perception" class="figure">
         <p>Explore the code and datasets for ActiView:</p>
         <a href="https://github.com/THUNLP-MT/ActiView" class="cta-button">View on GitHub</a>
     </section>
@@ -61,7 +66,7 @@
         <p>results</p>
     </section>
     
-    <footer id="bibtex">
+    <footer id="contact">
         <h2>Contact Us</h2>
         <p>For questions or inquiries, please reach out to us at: <a href="mailto:w.ziyue1010@gmail.com">w.ziyue1010@gmail.com</a></p>
     </footer>
