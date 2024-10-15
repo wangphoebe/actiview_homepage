@@ -42,7 +42,7 @@ header {
     background-position: center center;
     background-size: contain;
     color: white;
-    height: 30vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,6 +119,21 @@ section h3 {
 section p, ul {
     font-size: 1.2rem;
     margin: 10px 0;
+}
+
+.two-column-layout {
+    display: flex; /* Enables Flexbox */
+    justify-content: space-between; /* Space between columns */
+}
+
+.left-column {
+    flex: 1; /* Takes 1 part of the available space */
+    padding-right: 20px; /* Adds space to the right */
+}
+
+.right-column {
+    flex: 1; /* Takes 1 part of the available space */
+    padding-left: 20px; /* Adds space to the left */
 }
 
 .figure {
