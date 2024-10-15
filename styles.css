@@ -33,9 +33,9 @@ nav ul li a {
 }
 
 header {
-    background: url('figures/title_figure.jpg') no-repeat center center;
-	background-position: center center;
-	background-size: contain;
+    background: url('figures/title_figure.jpg') no-repeat center center/cover;
+    background-position: center center;
+    background-size: contain;
     color: white;
     height: 100vh;
     display: flex;
@@ -43,7 +43,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
+    position: center;
     z-index: 1;
 }
 
