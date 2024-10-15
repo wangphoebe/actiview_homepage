@@ -166,3 +166,26 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+mark {
+    background-color: #f0f0f0; /* Custom light gray */
+}
