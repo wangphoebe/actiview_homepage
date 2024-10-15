@@ -37,7 +37,7 @@ header {
     background-position: center center;
     background-size: contain;
     color: white;
-    height: 100vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,7 +107,7 @@ section h2 {
 }
 
 section h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
 }
 
