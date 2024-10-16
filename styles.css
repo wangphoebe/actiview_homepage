@@ -167,25 +167,25 @@ footer a:hover {
     text-decoration: underline;
 }
 
-table {
+.table-container {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+    overflow-x: auto; /* Enables horizontal scrolling on smaller screens */
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+table {
+    width: 100%; /* Table will take up the full width of the container */
+    border-collapse: collapse;
+    /* margin: 20px 0; */
 }
 
 th, td {
-    padding: 8px;
+    padding: 10px;
     text-align: center;
+    border: 1px solid #ddd;
 }
 
 thead {
     background-color: #f2f2f2;
-                <td>63.87</td>
-                <td>61.25</td>
 }
 
 .highlight {
