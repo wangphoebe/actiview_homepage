@@ -53,10 +53,10 @@
 
     <section id="data">
         <h2>Project introduction</h2>
-	<div class="two-column-layout">
+		<div class="two-column-layout">
 	        <div class="left-column">
-	            <p>Despite the extensive efforts devoted to MLLM evaluation, active perception remains underexplored. Active perception involves <b>understanding the reasons for sensing, choosing what to perceive, and determining the methods, timing, and locations for achieving that perception</b><sup>[1]</sup>. This is important because in the real world, the desired information often does not appear directly in the center of one’s field of vision. Instead, it requires individuals to move their field of view, locate details, and filter out distracting information. For example, in right figure, suppose we are looking for information in a giant painting. We need to first shift our view to locate the specific area and then possibly zoom in to gather detailed information. Intuitively, <b>active perception not only enables a person or model to accomplish more complex tasks, but it also has the potential to serve as a good indicator of the level of intelligence of a model</b>. This makes it a critical capability that warrants thorough evaluation.
-</p>
+	            <p2>Despite the extensive efforts devoted to MLLM evaluation, active perception remains underexplored. Active perception involves <b>understanding the reasons for sensing, choosing what to perceive, and determining the methods, timing, and locations for achieving that perception</b><sup>[1]</sup>. This is important because in the real world, the desired information often does not appear directly in the center of one’s field of vision. Instead, it requires individuals to move their field of view, locate details, and filter out distracting information. For example, in right figure, suppose we are looking for information in a giant painting. We need to first shift our view to locate the specific area and then possibly zoom in to gather detailed information. Intuitively, <b>active perception not only enables a person or model to accomplish more complex tasks, but it also has the potential to serve as a good indicator of the level of intelligence of a model</b>. This makes it a critical capability that warrants thorough evaluation.
+</p2>
 	        </div>
 	        <div class="right-column">
 		    <img src="figures/figure1.png" alt="Figure 1: Example of active perception" class="figure">
@@ -64,9 +64,41 @@
     	</div>
 	<h3>Benchmark</h3>
         <p>
-		Explore the code and datasets for ActiView: <a href="https://github.com/THUNLP-MT/ActiView" class="cta-button">View on GitHub</a>
-	</p>
+		(Explore the code and datasets for ActiView: <a href="https://github.com/THUNLP-MT/ActiView" class="cta-button">View on GitHub</a>)
+		</p>
+		<div class="two-column-layout">
+			<div class="left-column">
+				<p2>
+				Our benchmark exams active perception abilities of models via different perceptual fields, <b>Acti</b>vely zooming and shifting of <b>View</b>s (<b>ActiView</b>) are required. We summarise zooming and shifting as two fundamental factors of active perception as illustrated in the right figure, where we can evaluate active perception abilities of models through the two factors separately or integratedly. ActiView imitates the procedure of active perception by providing models with an initial view, which is a cropped field of the original image, as depicted in the right figure, and requires models to search for missing but important information with view zooming and shifting, and to minimize distractions caused by redundant information in the view. We manually annotated 325 questions, where each question corresponds to 5 different evaluation instances that assess active perception abilities under different settings and levels of difficulty. In total, there are 1,625 evaluation instances in our benchmark. 
+				</p2>
+				<p2>
+				When perceiving an image, humans intuitively focus on three principle aspects: the <i>environment</i> depicted in the image, the primary <i>objects</i>, and the <i>event</i> that these objects are engaged in. Correspondingly, we summarise the questions in our benchmark into <i>three main categorises</i>, including <b>environment-centric (Type I)</b>, <b>object-centric (Type II)</b>, <b>and event-centric (Type III)</b> categorises. These main categorises are further divided into <i>eight sub-classes</i> according to the specific type of visual information and visual features used for answering the questions. The right figure displays eight examples for each of the sub-classes, and demonstrates features of our benchmark. The name of each sub-classes are shown in the figure and we refer readers to our paper for detailed explanations.
+				</p2>
+			</div>
+			<div class="right-column">
+			<img src="figures/cate.png" alt="Figure 2: Example of categories." class="figure">
+			</div>
+		</div>
 	<h3>Pipeline</h3>
+		<div class="two-column-layout">
+			<div class="left-column">
+				<p2>
+				We design three pipelines for different abilities (as illustrated in the right figure), two fundamental independent abilities, zooming and shifting, and a mixture of them. 
+				</p2>
+				<p2>
+				<b>Zooming pipeline</b> evaluates the ability to locate and determine fine-grained information that are necessary to answer the question. As illustrated by (a) in the right figure, this pipeline contains two stages, the view selection and the question answering stages. To simulate the zooming operation, models are required to first select sub-views to be zoomed given the initial view, then answer questions based on these zoomed views. The initial view used in this pipeline is the full image with size <code>w × h</code>. Each of the selected sub-views will be resized to size <code>w × h</code>, the same size as the initial view.
+				</p2>
+				<p2>
+				<b>Shifting pipeline</b> evaluates the ability to shift perceptual fields for missing information and to deduce the answer given perceived perceptual fields, which is also a two-stage pipeline as shown in (b) in the right figure. To simulate the movement of human eyes, models are presented with an initial view, of size <code>w × h</code>, which is a cropped field from the original image, and are asked to determine if the current view or views are sufficient for answering the questions. Upon receiving positive responses, models are prompted to produce answer given the current view or views. If the model requires more views to infer the answer, an adjacent view will be given until the model is able to answer the question.
+				</p2>
+				<p2>
+				<b>Mixed pipeline</b> does not specify the type of active perception ability required, while the above pipelines require to either zooming or shifting. As illustrated in (c), models must independently decide whether to zoom and/or shift to different perceptual fields. Unlike the zooming pipeline, where the model answers questions based on all selected views, in the mixed pipeline, a view would be discarded after zooming if the model recognizes it as irrelevant to the question. In comparison to the shifting pipeline, the mixed pipeline also provides access to the full image view in addition to cropped sub-views. 
+				</p2>
+			</div>
+			<div class="right-column">
+			<img src="figures/pipe.png" alt="Figure 3: Evaluation pipelines." class="figure">
+			</div>
+		</div>
 	<h3>Cases</h3>
 
     </section>

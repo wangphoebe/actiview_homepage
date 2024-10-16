@@ -188,6 +188,17 @@ thead {
     background-color: #f2f2f2;
 }
 
+/* Blue background for the "Zooming" column (3rd column) */
+td:nth-child(3), th:nth-child(3) {
+    background-color: #C1E5F5; /* Light blue background */
+}
+
+/* Green background for the "Shifting" columns (5th to 8th columns) */
+td:nth-child(5), td:nth-child(6), td:nth-child(7), td:nth-child(8),
+th:nth-child(5), th:nth-child(6), th:nth-child(7), th:nth-child(8) {
+    background-color: #C5E8AC; /* Light green background */
+}
+
 .highlight {
     background-color: #f0f0f0; /* Light gray background */
 }
