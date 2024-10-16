@@ -184,6 +184,12 @@ th, td {
 
 thead {
     background-color: #f2f2f2;
+                <td>63.87</td>
+                <td>61.25</td>
+}
+
+.highlight {
+    background-color: #f0f0f0; /* Light gray background */
 }
 
 mark {
